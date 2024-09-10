@@ -64,6 +64,5 @@ const usersSlice = createSlice({
   },
 });
 
-
 export const { filterUsers } = usersSlice.actions;
 export default usersSlice.reducer;
