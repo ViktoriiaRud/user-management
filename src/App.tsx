@@ -1,12 +1,19 @@
 import React from 'react';
-import './App.css';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import UserTable from './components/UserTable';
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1>User management</h1>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <h1>User Management</h1>
+        <UserTable />
+      </div>
+    </Provider>
   );
-}
+};
+
 
 export default App;

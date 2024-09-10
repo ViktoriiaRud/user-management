@@ -1,14 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { AppDispatch } from './store';
 
 
-export const fetchUsers = () => async (dispatch: AppDispatch) => {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-  dispatch(setUsers(response.data));
-};
-
-interface User {
+export interface User {
   id: number;
   name: string;
   username: string;
@@ -19,31 +13,57 @@ interface User {
 interface UsersState {
   users: User[];
   filteredUsers: User[];
-  search: string;
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
 }
 
 const initialState: UsersState = {
   users: [],
   filteredUsers: [],
-  search: '',
+  status: 'idle',
+  error: null,
 };
 
-const userSlice = createSlice({
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+  const response = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users');
+  return response.data;
+});
+
+const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    setUsers: (state, action: PayloadAction<User[]>) => {
-      state.users = action.payload;
-      state.filteredUsers = action.payload;
+    filterUsers: (state, action: PayloadAction<{ [key: string]: string }>) => {
+      state.filteredUsers = state.users.filter(user => {
+        return Object.entries(action.payload).every(([key, value]) => {
+          const userValue = user[key as keyof User];
+          if (typeof userValue === 'string') {
+            return userValue.toLowerCase().includes(value.toLowerCase());
+          } else if (typeof userValue === 'number') {
+            return userValue.toString().includes(value);
+          }
+          return false;
+        });
+      });
     },
-    setSearch: (state, action: PayloadAction<string>) => {
-      state.search = action.payload;
-      state.filteredUsers = state.users.filter((user) =>
-        user.name.toLowerCase().includes(action.payload.toLowerCase())
-      );
-    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUsers.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.users = action.payload;
+        state.filteredUsers = action.payload;
+      })
+      .addCase(fetchUsers.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message || null;
+      });
   },
 });
 
-export const { setUsers, setSearch } = userSlice.actions;
-export default userSlice.reducer;
+
+export const { filterUsers } = usersSlice.actions;
+export default usersSlice.reducer;
