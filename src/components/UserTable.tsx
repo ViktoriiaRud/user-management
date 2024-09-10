@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import { fetchUsers, filterUsers, User } from '../redux/userSlice';
+import { HiUser, HiUserCircle, HiMail, HiPhone } from 'react-icons/hi';
 
 
 const UserTable: React.FC = () => {
@@ -68,10 +69,31 @@ const UserTable: React.FC = () => {
       <table className='w-full border-collapse'>
         <thead>
           <tr className='bg-gray-50'>
-            <th className='bg-blue-400'>Name</th>
-            <th className='bg-green-500'>Username</th>
-            <th className='bg-orange-400'>Email</th>
-            <th className='bg-rose-300'>Phone</th>
+            <th className='bg-blue-400 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
+                  <div className='flex items-center space-x-1'>
+                    <HiUser className='w-4 h-4' />
+                    <span>Name</span>
+                  </div>
+                </th>
+            {/* <th className='bg-green-500'>Username</th> */}
+            <th className='bg-green-500 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
+                  <div className='flex items-center space-x-1'>
+                    <HiUserCircle className='w-4 h-4' />
+                    <span>Username</span>
+                  </div>
+                </th>
+            <th className='bg-orange-400 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
+                  <div className='flex items-center space-x-1'>
+                    <HiMail className='w-4 h-4' />
+                    <span>Email</span>
+                  </div>
+                </th>
+            <th className='bg-rose-300 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
+                  <div className='flex items-center space-x-1'>
+                    <HiPhone className='w-4 h-4' />
+                    <span>Phone</span>
+                  </div>
+                </th>
           </tr>
         </thead>
         <tbody className='bg-white divide-y divide-gray-200'>
