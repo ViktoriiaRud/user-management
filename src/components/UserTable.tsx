@@ -75,7 +75,6 @@ const UserTable: React.FC = () => {
                     <span>Name</span>
                   </div>
                 </th>
-            {/* <th className='bg-green-500'>Username</th> */}
             <th className='bg-green-500 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
                   <div className='flex items-center space-x-1'>
                     <HiUserCircle className='w-4 h-4' />
