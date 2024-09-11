@@ -28,43 +28,71 @@ const UserTable: React.FC = () => {
     return <div className="text-center py-4 text-red-500">Error: {error}</div>;
 
   return (
-    <div className='bg-gray-100 min-h-screen py-8'>
-          <h1 className='text-gray-900 text-4xl font-mono font-bold tracking-wider text-center py-4'>User Management</h1>
-      <div className='max-w-4xl mx-auto bg-white rounded-lg shadow-lg      overflow-hidden'>
-        <div className='p-4 space-y-4'>
-        <input
+    <div className='bg-gray-600 min-h-screen py-8'>
+          <h1 className='text-white text-4xl font-mono font-bold tracking-wider text-center py-4'>User Management</h1>
+          <div className='flex items-center justify-center gap-5 flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 bg-gray-500 dark:bg-gray-900'>
+          <div className="relative">
+            <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+            <input
           type="text"
           name="name"
-          placeholder="Filter by name"
+          placeholder="Name"
           value={filters.name}
           onChange={handleFilterChange}
-          className='w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-200 focus:border-blue-400 transition-colors'
+          className='w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
-        <input
+        </div>
+          <div className="relative">
+            <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+            <input
           type="text"
           name="username"
-          placeholder="Filter by username"
+          placeholder="Username"
           value={filters.username}
           onChange={handleFilterChange}
-          className='w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-200 focus:border-green-400 transition-colors'
+          className='w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
-        <input
+        </div>
+        <div className="relative">
+            <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+            <input
           type="text"
           name="email"
-          placeholder="Filter by email"
+          placeholder="Email"
           value={filters.email}
           onChange={handleFilterChange}
-          className='w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-orange-200 focus:border-orange-400 transition-colors'
+          className='w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
-        <input
+        </div>
+        <div className="relative">
+            <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+            <input
           type="text"
           name="phone"
-          placeholder="Filter by phone"
+          placeholder="Phone"
           value={filters.phone}
           onChange={handleFilterChange}
-          className='w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-colors'
+          className='w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
+        </div>
        </div>
+      <div className='max-w-4xl mx-auto bg-white rounded-lg shadow-lg      overflow-hidden'>
        <div className='overflow-x-auto'>
       <table className='w-full border-collapse'>
         <thead>
