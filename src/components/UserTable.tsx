@@ -28,9 +28,9 @@ const UserTable: React.FC = () => {
     return <div className="text-center py-4 text-red-500">Error: {error}</div>;
 
   return (
-    <div className='bg-gray-600 min-h-screen py-8'>
+    <div className='bg-gray-600 min-h-screen py-12'>
           <h1 className='text-white text-4xl font-mono font-bold tracking-wider text-center py-4'>User Management</h1>
-          <div className='flex items-center justify-center gap-5 flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 bg-gray-500 dark:bg-gray-900'>
+          <div className='flex items-center justify-center gap-5 flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 dark:bg-gray-900'>
           <div className="relative">
             <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
                 <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -43,7 +43,7 @@ const UserTable: React.FC = () => {
           placeholder="Name"
           value={filters.name}
           onChange={handleFilterChange}
-          className='w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+          className='shadow-lg shadow-blue-500/50 w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
         </div>
           <div className="relative">
@@ -58,7 +58,7 @@ const UserTable: React.FC = () => {
           placeholder="Username"
           value={filters.username}
           onChange={handleFilterChange}
-          className='w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+          className='shadow-lg shadow-blue-500/50 w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
         </div>
         <div className="relative">
@@ -73,7 +73,7 @@ const UserTable: React.FC = () => {
           placeholder="Email"
           value={filters.email}
           onChange={handleFilterChange}
-          className='w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+          className='shadow-lg shadow-blue-500/50 w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
         </div>
         <div className="relative">
@@ -88,7 +88,7 @@ const UserTable: React.FC = () => {
           placeholder="Phone"
           value={filters.phone}
           onChange={handleFilterChange}
-          className='w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+          className='shadow-lg shadow-blue-500/50 w-30 p-2 px-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
         </div>
        </div>
@@ -97,25 +97,25 @@ const UserTable: React.FC = () => {
       <table className='w-full border-collapse'>
         <thead>
           <tr className='bg-gray-50'>
-            <th className='bg-blue-400 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
+            <th className='bg-sky-200 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
                   <div className='flex items-center space-x-1'>
                     <HiUser className='w-4 h-4' />
                     <span>Name</span>
                   </div>
                 </th>
-            <th className='bg-green-500 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
+            <th className='bg-sky-300 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
                   <div className='flex items-center space-x-1'>
                     <HiUserCircle className='w-4 h-4' />
                     <span>Username</span>
                   </div>
                 </th>
-            <th className='bg-orange-400 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
+            <th className='bg-sky-400 px-6 py-4 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
                   <div className='flex items-center space-x-1'>
                     <HiMail className='w-4 h-4' />
                     <span>Email</span>
                   </div>
                 </th>
-            <th className='bg-rose-300 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
+            <th className='bg-sky-500 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider border-b'>
                   <div className='flex items-center space-x-1'>
                     <HiPhone className='w-4 h-4' />
                     <span>Phone</span>

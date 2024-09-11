@@ -24,3 +24,7 @@ To run the project:
 ##### Redux [Redux](https://redux.js.org/)
 ##### Tailwind css [Tailwind css](https://tailwindcss.com/)
 ##### Create React App [React](https://ru.legacy.reactjs.org/)
+
+
+## Deploy on Vercel
+User Management [User Management](https://vercel.com/viktoriia/user-management)
